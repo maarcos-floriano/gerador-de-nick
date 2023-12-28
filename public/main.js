@@ -54,4 +54,5 @@ function criarPerfil() {
   nickName = gerarNick(nome);
   email = criarEmail(nickName);
 
+  console.log(nickName, email);
 }
