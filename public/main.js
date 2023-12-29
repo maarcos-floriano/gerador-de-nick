@@ -39,9 +39,9 @@ function gerarNick(nome) {
   return nicksEscolhidos;
 }
 function criarEmail(nick) {
-  dominios = ["@gmail.com", "@hotmail.com", "@outlook.com", "@yahoo.com"];
+  dominios = ["@gmail.com", "@hotmail.com", "@outlook.com", "@yahoo.com", "@bol.com.br"];
   let emailComNick = [];
-  for (let i = 0; i < dominios.length; i++) {
+  for (let i = 0; i < nick.length; i++) {
 
     emailComNick.push(nick[i] + dominios[i]);
   }
@@ -53,6 +53,14 @@ function criarPerfil() {
   let nome = document.getElementById("ipt_nome").value;
   nickName = gerarNick(nome);
   email = criarEmail(nickName);
+  info.innerHTML = "";
 
-  console.log(nickName, email);
+  for (let i=0; i < nickName.length; i++) {
+    info.innerHTML += `
+    <div class="card">
+      <p>${nickName[i]}</p>
+      <p>${email[i]}</p>
+    </div>
+    `;
+  }
 }
